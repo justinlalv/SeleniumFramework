@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Sample test Suite]" guice-stage="DEVELOPMENT">
+  <test name="Sample test(failed)">
+    <classes>
+      <class name="com.training.sanity.tests.courseSearch">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="courseSearch"/>
+        </methods>
+      </class> <!-- com.training.sanity.tests.courseSearch -->
+      <class name="com.training.sanity.tests.LoginTests">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="updatePassword"/>
+        </methods>
+      </class> <!-- com.training.sanity.tests.LoginTests -->
+    </classes>
+  </test> <!-- Sample test(failed) -->
+</suite> <!-- Failed suite [Sample test Suite] -->
