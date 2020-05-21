@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -65,6 +66,12 @@ public class eLearningCoursePOM {
 	@FindBy(xpath="//a[@class='btn btn-danger btn-sm']")
 	private WebElement unsubscibeCourse;
 	
+	@FindBy (xpath="//img[@id='toolimage_10861']")
+	private WebElement testIcon;
+	
+	@FindBy(xpath="//a[contains(text(),'Justin Selenium Test')]")
+	private WebElement testName;
+	
 	//WebElements Declaration for Admin Login
 	
 	@FindBy(xpath="//button[@class='close']")
@@ -72,6 +79,9 @@ public class eLearningCoursePOM {
 	
 	@FindBy(xpath="//a[contains(text(),'Administration')]")
 	private WebElement adminTab;
+	
+	@FindBy(xpath="//a[contains(text(),'Reporting')]")
+	private WebElement reportingTab;
 	
 	@FindBy(partialLinkText="Courses categories")
 	private WebElement coursecategoriesLink;
@@ -265,6 +275,10 @@ public class eLearningCoursePOM {
 		this.adminTab.click();
 	}
 	
+	public void clickReportingTab() {
+		this.reportingTab.click();
+	}
+	
 	public void clickCourseCategories() {
 		this.coursecategoriesLink.click();
 	}
@@ -355,6 +369,14 @@ public class eLearningCoursePOM {
 		enter.keyRelease(KeyEvent.VK_DOWN);
 		enter.keyRelease(KeyEvent.VK_ENTER);		
 	}
+	
+	public void pressEnterActMethod() {
+		Actions returnButtonPress = new Actions(driver);
+		returnButtonPress.sendKeys(Keys.RETURN).perform();
+				
+	}
+	
+	
 	// Method not used
 	public void mouseClick() {
 		Actions mouseact = new Actions(driver);
@@ -449,9 +471,21 @@ public class eLearningCoursePOM {
 		this.addBtnUserstoCourses.click();
 	}
 	
+	public void clickTestIconStudent() {
+		this.testIcon.click();
+	}
+	
+	public void selTestName() {
+		this.testName.click();
+	}
+	
 	public String getSuccessMsgUserAddedToCourse() {
 		String userCoursesAddedmsg = successmsgCourseAddtoUser.getText();
 		return userCoursesAddedmsg;
+	}
+	
+	public void acceptAlert() {
+		driver.switchTo().alert().accept();
 	}
 	
 	// Method not used

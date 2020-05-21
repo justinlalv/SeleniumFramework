@@ -47,6 +47,7 @@ public class LoginPOM {
 	
 	@FindBy(xpath="//button[@id='lost_password_submit']")
 	private WebElement sendMsgButton;
+
 	
 	public void sendUserName(String userName) {
 		this.userName.clear();

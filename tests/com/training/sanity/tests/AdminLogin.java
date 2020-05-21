@@ -60,14 +60,14 @@ public class AdminLogin {
 		screenShot.captureScreenShot("TC02_Adminpage");
 	}
 	
-	@Test (priority=2)
+	@Test (priority=2,enabled=true)
 	public void categoryCourseCreation() throws InterruptedException,AWTException {
 		Thread.sleep(2000);
 		elearningPOM.dismissAlert();
 		elearningPOM.clickCourseCategories();	
 		elearningPOM.clickNewCategoriesIcon();
-		elearningPOM.enterCategoryCode("JT213");// data need to be changed on every run
-		elearningPOM.enterCategoryName("Just Test213");// data need to be changed on every run
+		elearningPOM.enterCategoryCode("JT3");// data need to be changed on every run
+		elearningPOM.enterCategoryName("Just Test3");// data need to be changed on every run
 		elearningPOM.selectAddCRSCategoryRadio();
 		elearningPOM.clickAddCategoryBtn();
 		screenShot.captureScreenShot("TC02_Add category Success");
@@ -77,15 +77,17 @@ public class AdminLogin {
 		Thread.sleep(2000);
 		elearningPOM.dismissAlert();
 		elearningPOM.clickCreateCourse();
-		elearningPOM.enterCourseTitle("Justin Test Course12"); // data need to be changed on every run
-		elearningPOM.enterCourseCode("JTC12"); // data need to be changed on every run
+		elearningPOM.enterCourseTitle("Justin Test Course3"); // data need to be changed on every run
+		elearningPOM.enterCourseCode("JTC3"); // data need to be changed on every run
 		elearningPOM.selectTeachers("Man");
 		//elearningPOM.pressEnter(); -- Robo class not working on Mac
-		elearningPOM.selectTeacherName(); //workaround to find element and click it.
+		elearningPOM.pressEnterActMethod();
+		//elearningPOM.selectTeacherName(); //workaround to find element and click it.
 		elearningPOM.clickCourseCategory();
 		elearningPOM.enterCourseCategoryName("Blended");
 		//elearningPOM.pressEnter(); -- Robo class not working on Mac
-		elearningPOM.selectCourseCategoryName(); //workaround to find element and click it.
+		elearningPOM.pressEnterActMethod();
+		//elearningPOM.selectCourseCategoryName(); //workaround to find element and click it.
 		System.out.println(elearningPOM.getSelectedLang());
 		elearningPOM.clickSubmitCourseCreation();
 		elearningPOM.enterCourseSearch("Justin");
@@ -95,7 +97,7 @@ public class AdminLogin {
 				
     } 
 	
-	@Test (priority=3)
+	@Test (priority=3,enabled=false)
 	public void addUser() throws InterruptedException {
 		elearningPOM.clickAdminTab();
 		Thread.sleep(2000);
@@ -127,6 +129,5 @@ public class AdminLogin {
 		Assert.assertEquals(elearningPOM.getSuccessMsgUserAddedToCourse(), "The selected users are subscribed to the selected course");
 		screenShot.captureScreenShot("TC03_Add User to Course Success Msg");
 		System.out.println(elearningPOM.getSuccessMsgUserAddedToCourse());
-	}
-	
+	}	
 }

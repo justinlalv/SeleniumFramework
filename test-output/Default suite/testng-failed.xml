@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.StudentLogin">
+      <class name="com.training.regression.tests.LoginExcelTest">
         <methods>
-          <include name="courseProject_taskComment"/>
+          <include name="loginDBTest" invocation-numbers="0 1 2 3"/>
           <include name="setUpBeforeClass"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.StudentLogin -->
+      </class> <!-- com.training.regression.tests.LoginExcelTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
